@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	int c_print = 0;
 	va_list args;
 
-	if (format == NULL || (format[0] == '%' && format[1] == 0) || format[0] == 0)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (1);
 
 	va_start(args, format);
@@ -45,7 +45,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 's')
 			{
-				char *str = va_arg(args, char*);
+				char *str = va_arg(args, char *);
 				int str_len = 0;
 
 				while (str[str_len] != '\0')
